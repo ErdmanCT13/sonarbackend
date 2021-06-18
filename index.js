@@ -120,5 +120,5 @@ app.use("/user", userMiddleware)
 
 
 app.listen(80, async () => {
-    console.log("listening on 4000")
+    console.log("listening on 80")
 })
