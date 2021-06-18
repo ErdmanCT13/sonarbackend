@@ -36,83 +36,8 @@ const app = express()
 //     res.json({events})
 // })
 
-// app.post("/createUser", (req, res) => {
 
-//     let missingParameterError = (missingParameterName) => {throw new Error(`Missing URI query paramter: ${missingParameterName}`)}
-//     console.log("CREATING A USER!")
-//     let params = req.query
-//     try{
-//         User.create({
-//             userEmail: params.email ?? missingParameterError("email"),
-//             userRadius: params.radius ?? 100,
-//             userLatitude: params.lat ?? null,
-//             userLongitude: params.lng ?? null,
-//             userPostalCode: params.postalCode ?? null
-//         })
-//     }
-//     catch(err){
-//         console.log(err)
-//     }
-//     res.sendStatus(200)
-// })
-// app.put("/createUser", (req, res) => {
 
-//     let missingParameterError = (missingParameterName) => {throw new Error(`Missing URI query paramter: ${missingParameterName}`)}
-//     console.log("CREATING A USER!")
-//     let params = req.query
-//     try{
-//         User.create({
-//             userEmail: params.email ?? missingParameterError("email"),
-//             userRadius: params.radius ?? 100,
-//             userLatitude: params.lat ?? null,
-//             userLongitude: params.lng ?? null,
-//             userPostalCode: params.postalCode ?? null
-//         })
-//     }
-//     catch(err){
-//         console.log(err)
-//     }
-//     res.sendStatus(200)
-// })
-
-// app.post("/pinLocation", (req, res) => {
-//     let missingParameterError = (missingParameterName) => {throw new Error(`Missing URI query paramter: ${missingParameterName}`)}
-//     console.log("PINNING A LOCATION")
-//     let params = req.query
-//     try{
-//         PinnedLocation.create({
-//             locationName: params.locationName,
-//             radius: params.radius,
-//             userId: params.userId,
-//             latitude: params.lat,
-//             longitude: params.lng
-//         })
-//     }
-//     catch(err){
-//         console.log(err)
-//     }
-//     res.sendStatus(200)
-// })
-// app.put("/pinLocation", (req, res) => {
-//     let missingParameterError = (missingParameterName) => {throw new Error(`Missing URI query paramter: ${missingParameterName}`)}
-//     console.log("PINNING A LOCATION")
-//     let params = req.query
-//     try{
-//         PinnedLocation.create({
-//             locationName: params.locationName,
-//             radius: params.radius,
-//             userId: params.userId,
-//             latitude: params.lat,
-//             longitude: params.lng
-//         })
-//     }
-//     catch(err){
-//         console.log(err)
-//     }
-//     res.sendStatus(200)
-// })
-
-console.log(userMiddleware)
 
 
 app.use("/user", userMiddleware)
