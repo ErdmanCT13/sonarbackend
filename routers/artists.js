@@ -10,7 +10,7 @@ const artists = express.Router()
 artists
     .route("/artists")
     .get(async (req, res) => {
-        await FollowedArtist.findAndCountAll({
+        var artists = await FollowedArtist.findAndCountAll({
             where: {
                 userId: {
                     [Op.eq]: req.query.userid

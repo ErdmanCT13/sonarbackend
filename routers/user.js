@@ -17,11 +17,27 @@ user.use(showsMiddleware)
 
 user.get("/", (req, res) => {
     console.log("GETTING USER")
+    User.findOne({
+        where: {
+            [Op.or]: [
+                {
+                    userEmail: req.query.email
+                },
+                {
+                    userId: req.query.userid
+                }
+            ]
+        }
+    })
 })
 
-user.post("/signup", (req, res) => {
-    User.create({
-        
+user.post("/signup", async (req, res) => {
+    var newUser = User.create({
+        userEmail: req.query.email,
+        userRadius: req.query.radius,
+        userPostalCode: req.query.postalcode,
+        userLatitude: req.query.lat,
+        userLongitude: req.query.lng,
     })
 })
 
