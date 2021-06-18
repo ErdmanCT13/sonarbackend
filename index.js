@@ -42,7 +42,7 @@ const app = express()
 
 app.use("/user", userMiddleware)
 
-app.get("ping", (req, res) => {
+app.get("/ping", (req, res) => {
     res.sendStatus(200)
 })
 
