@@ -44,6 +44,6 @@ app.use("/user", userMiddleware)
 
 
 
-app.listen(80, async () => {
+app.listen(process.env.PORT || 4000, async () => {
     console.log("listening on 80")
 })
