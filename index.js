@@ -42,7 +42,9 @@ const app = express()
 
 app.use("/user", userMiddleware)
 
-
+app.get("ping", (req, res) => {
+    res.sendStatus(200)
+})
 
 app.listen(process.env.PORT || 4000, async () => {
     console.log("listening on 80")
