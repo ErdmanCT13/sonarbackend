@@ -1,0 +1,4 @@
+createUser
+
+
+http://localhost:3000/?lat=43.1024&lng=-89.3643&radius=50&email=erdman_carl@hotmail.com&postalCode=53704
