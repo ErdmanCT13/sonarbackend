@@ -6,11 +6,11 @@ class PinnedLocation extends Model { }
 PinnedLocation.init(
     {
         userId:{
-            primaryKey: true,
             allowNull: false,
-            type: DataTypes.INTEGER
+            type: DataTypes.STRING
         },
         locationId: {
+            primaryKey: true,
             type: DataTypes.INTEGER,
             autoIncrement: true,
             unique: true,
@@ -26,11 +26,11 @@ PinnedLocation.init(
         },
         latitude: {
             allowNull: false,
-            type: DataTypes.INTEGER
+            type: DataTypes.DOUBLE
         },
         longitude: {
             allowNull: false,
-            type: DataTypes.INTEGER
+            type: DataTypes.DOUBLE
         }
     },
     {

@@ -5,20 +5,25 @@ class FollowedArtist extends Model { }
 
 FollowedArtist.init(
     {
-        artistId: {
-            primaryKey: true,
+        followedArtistId: {
             autoIncrement: true,
             allowNull: false,
             unique: true,
             type: DataTypes.INTEGER
         },
         artistName: {
+            primaryKey: true,
             allowNull: false,
             type: DataTypes.STRING
         },
         userId: {
+            primaryKey: true,
             allowNull: false,
-            type: DataTypes.INTEGER
+            type: DataTypes.STRING
+        },  
+        spotifyId: {
+            allowNull: false,
+            type: DataTypes.STRING
         }
     },
     {
