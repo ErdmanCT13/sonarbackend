@@ -47,7 +47,7 @@ var clientAuthAccessToken =
                     },
                     body: "grant_type=authorization_code" +
                         "&code=" + req.query.code +
-                        "&redirect_uri=" + encodeURIComponent("http://localhost:4000/spotify/authorize/user") +
+                        "&redirect_uri=" + encodeURIComponent("https://sonarbackend.herokuapp.com/authorize/user") +
                         "&client_id=" + clientId +
                         "&client_secret=" + clientSecret
                 }).then(response => response.json())
