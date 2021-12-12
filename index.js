@@ -19,9 +19,7 @@ database.sync({force: true})
 
 const app = express()
 
-app.use(cors(
-    process.env.WHITELISTED_CORS_ORIGINS.split(",")
-))
+app.use(cors())
 
 
 
