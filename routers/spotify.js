@@ -5,6 +5,8 @@ const { FollowedArtist } = require("../sequelize/models/followedArtist");
 const { User } = require("../sequelize/models/user");
 const { PinnedLocation } = require("../sequelize/models/pinnedLocation");
 const SpotifyWebApi = require("spotify-web-api-node");
+const btoa = require("btoa")
+const atob = require("atob")
 
 // BASIC API FLOW GOES SOMETHING LIKE
 
