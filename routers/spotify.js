@@ -17,8 +17,10 @@ var spotifyApiClient = new SpotifyWebApi();
 var callCounter = 0;
 
 spotify.route("/authorize/user").get(async (req, res) => {
-  console.log(++callCounter);
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  console.log(++callCounter);   
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
   console.log(req.query.refresh_token, "REFRESH TOKEN");
   var clientId = process.env.SPOTIFY_CLIENT_ID;
   var clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
