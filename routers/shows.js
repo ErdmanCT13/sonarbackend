@@ -12,7 +12,9 @@ const shows = express.Router()
 shows
     .route("/shows")
     .get(async (req, res) => {
-        res.setHeader("Access-Control-Allow-Origin", "*")
+        // res.setHeader("Access-Control-Allow-Origin", "*");
+        // res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        // res.setHeader('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
         try {
             var locations = await PinnedLocation.findAll({
                 where: {
@@ -32,7 +34,7 @@ shows
         }
         catch (err) {
             console.log(err)
-            res.sendStatus(400)
+            res.status(400).send(err.message)
         }
     })
 
