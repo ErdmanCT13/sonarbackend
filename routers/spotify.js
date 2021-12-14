@@ -121,7 +121,7 @@ spotify.route("/search").get(async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   const searchValue = req.query.search;
   const accessToken = (
-    await fetch("http://localhost:4000/spotify/authorize/client").then(
+    await fetch(`http://localhost:${process.env.PORT}/spotify/authorize/client`).then(
       (response) => response.json()
     )
   ).access_token;
