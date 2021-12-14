@@ -25,7 +25,7 @@ shows
             })
             console.log('LOCATIONS', locations)
             var allShowsNearPins = (await Promise.all(locations.map(location => getAllResponsePages(location.latitude, location.longitude, location.radius)))).flat() // stick all the requests into an array and WAIT
-            var followedArtists = await fetch(`http://localhost:4000/user/artists?userid=${req.query.userid}`).then(response => response.json())
+            var followedArtists = await fetch(`http://localhost:${process.env.PORT}/user/artists?userid=${req.query.userid}`).then(response => response.json())
             let filteredShows = allShowsNearPins.filter(show => followedArtists.find(artist => {
                 let findShowRegex = new RegExp(artist.artistName) // case insensitive regex
                 return findShowRegex.test(show.name)
